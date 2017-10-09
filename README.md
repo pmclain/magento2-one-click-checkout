@@ -2,7 +2,7 @@
 
 Add one click checkout option for logged in customers.
 
-#### Description
+### Description
 This module adds a button for "One Click Checkout" to the product view page for
 customers meeting the following criteria:
 * Customer MUST be logged in
@@ -13,7 +13,11 @@ Clicking the "One Click Checkout" button initiates and completes the transaction
 on the product view page. Once complete, a modal displays a link to the order
 view page and a summary of the order totals.
 
-#### Configuration
+### Installation
+`composer install pmclain/module-one-click-checkout:dev-master`  
+`bin/magento setup:upgrade`
+
+### Configuration
 Module settings are found in:  
 `Stores->Configuration->Checkout->One Click Checkout`  
 * **Enabled**: Enables/Disables One Click Checkout
@@ -23,7 +27,7 @@ orders
 customers without a default payment. The last stored payment method for is set
 as default.
 
-#### Compatibility
+### Compatibility
 It is compatible with Braintree out of the box. Configuration can be added for
 any payment method using the Magento Vault module for storing gateway tokens.
 
@@ -53,13 +57,13 @@ source can be referenced as an example,
 ```
 
 ### Magento Version Requirements
-| Release | Magento Version |
-| ------- | --------------- |
-| 0.1.x   | 2.2.x           | 
-| 0.1.x   | 2.1.x           |
-| Nope    | 2.0.x           |
+| Release      | Magento Version |
+| ------------ | --------------- |
+| dev-master   | 2.2.x           | 
+| dev-master   | 2.1.x           |
+| Nope         | 2.0.x           |
 
-#### Screenshots
+### Screenshots
 **Order Button**
 ![Button](docs/screenshots/button.png)  
   
@@ -75,5 +79,5 @@ source can be referenced as an example,
 **Admin Configuration**
 ![Admin Config](docs/screenshots/admin.png)
 
-#### License
+### License
 GNU GENERAL PUBLIC LICENSE Version 3
