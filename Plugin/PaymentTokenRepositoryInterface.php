@@ -93,6 +93,16 @@ class PaymentTokenRepositoryInterface
             $defaultPayment->setPaymentTokenId($token->getEntityId());
             $this->defaultPaymentRepository->save($defaultPayment);
         } catch (NoSuchEntityException $e) {
+            $this->createNewDefaultPayment($token);
+        }
+    }
+
+    /**
+     * @param \Magento\Vault\Api\Data\PaymentTokenInterface $token
+     */
+    private function createNewDefaultPayment($token)
+    {
+        try {
             $defaultPayment = $this->defaultPaymentFactory->create();
             $defaultPayment->setCustomerId($token->getCustomerId());
             $defaultPayment->setPaymentTokenId($token->getEntityId());
