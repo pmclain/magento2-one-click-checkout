@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Pmclain\OneClickCheckout\Api\ButtonInterface" type="Pmclain\OneClickCheckout\Model\Button" />
+    <preference for="Pmclain\OneClickCheckout\Api\DefaultPaymentRepositoryInterface" type="Pmclain\OneClickCheckout\Model\DefaultPaymentRepository" />
+    <preference for="Pmclain\OneClickCheckout\Api\Data\DefaultPaymentInterface" type="Pmclain\OneClickCheckout\Model\DefaultPayment" />
+    <type name="Pmclain\OneClickCheckout\Model\VaultPool">
+        <arguments>
+            <argument name="vaultSourceMap" xsi:type="array">
+                <item name="braintree" xsi:type="object">Pmclain\OneClickCheckout\Model\VaultSource\Braintree</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Vault\Block\TokenRendererInterface">
+        <plugin name="pmclain_occ_cardrenderer" type="Pmclain\OneClickCheckout\Plugin\TokenRendererInterface" sortOrder="10" />
+    </type>
+    <type name="Magento\Vault\Api\PaymentTokenRepositoryInterface">
+        <plugin name="pmclain_occ_paymenttokenrepository" type="Pmclain\OneClickCheckout\Plugin\PaymentTokenRepositoryInterface" sortOrder="10" />
+    </type>
+</config>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="checkout">
+            <group id="one_click_checkout" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>One Click Checkout</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable One Click Checkout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="shipping" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Shipping Method</label>
+                    <comment>Shipping method used for one click checkout orders.</comment>
+                    <source_model>Pmclain\OneClickCheckout\Model\Config\Source\Shipping</source_model>
+                </field>
+                <field id="set_default" translate="label comment" type="button" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Pmclain\OneClickCheckout\Block\Adminhtml\System\Config\SetDefault</frontend_model>
+                    <button_label>Set Default Payment Methods</button_label>
+                    <comment>Force default stored payment method for customers without active default.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

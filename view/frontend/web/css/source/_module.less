@@ -1,0 +1,24 @@
+& when (@media-common = true) {
+    .box-tocart {
+        .action.occ {
+            &:extend(.abs-button-l all);
+            margin-bottom: @indent__s;
+        }
+    }
+
+    #one-click-confirmation {
+        table {
+            max-width: 250px;
+            text-align: right;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .box-tocart {
+        .action.occ {
+            &:extend(.abs-button-responsive-smaller all);
+            width: 100%;
+        }
+    }
+}

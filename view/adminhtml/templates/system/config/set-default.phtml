@@ -1,0 +1,7 @@
+<button class="scalable" type="button" id="<?php echo $block->getHtmlId() ?>" data-mage-init='{"setDefaultPayment":{
+    "url": "<?php /* @escapeNotVerified */ echo $block->getAjaxUrl() ?>",
+    "elementId": "<?php echo $block->getHtmlId() ?>",
+    "successText": "<?php /* @escapeNotVerified */ echo __('Successful!') ?>",
+    "failedText": "<?php /* @escapeNotVerified */ echo __('Failed! Try again?') ?>"}, "validation": {}}'>
+    <span><span><span id="<?php echo $block->getHtmlId() ?>_result"><?php echo $block->escapeHtml($block->getButtonLabel()) ?></span></span></span>
+</button>
