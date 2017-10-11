@@ -6,5 +6,15 @@
                 <argument name="template" xsi:type="string">Pmclain_OneClickCheckout::customer_account/credit_card.phtml</argument>
             </action>
         </referenceBlock>
+        <referenceBlock name="pmclainauthorizenetcim.card.renderer">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Pmclain_OneClickCheckout::customer_account/credit_card.phtml</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="stripe.card.renderer">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Pmclain_OneClickCheckout::customer_account/credit_card.phtml</argument>
+            </action>
+        </referenceBlock>
     </body>
 </page>

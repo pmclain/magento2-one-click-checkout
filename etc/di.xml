@@ -7,6 +7,8 @@
         <arguments>
             <argument name="vaultSourceMap" xsi:type="array">
                 <item name="braintree" xsi:type="object">Pmclain\OneClickCheckout\Model\VaultSource\Braintree</item>
+                <item name="pmclain_authorizenetcim" xsi:type="object">Pmclain\OneClickCheckout\Model\VaultSource\PmclainAuthorizenetCim</item>
+                <item name="pmclain_stripe" xsi:type="object">Pmclain\OneClickCheckout\Model\VaultSource\PmclainStripe</item>
             </argument>
         </arguments>
     </type>

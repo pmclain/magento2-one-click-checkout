@@ -28,8 +28,10 @@ customers without a default payment. The last stored payment method for is set
 as default.
 
 ### Compatibility
-It is compatible with Braintree out of the box. Configuration can be added for
-any payment method using the Magento Vault module for storing gateway tokens.
+**Compatible Payment Modules**
+* Magento_Braintree (included with Magento)
+* [Pmclain_Stripe](https://github.com/pmclain/module-stripe)
+* [Pmclain_AuthorizenetCim](https://github.com/pmclain/module-authorizenetcim)  
 
 ***Adding a new Vault Payment Provider***
 1. Create class implementing `Pmclain\OneClickCheckout\Api\VaultSourceInterface`. The
