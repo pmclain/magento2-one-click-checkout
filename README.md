@@ -61,8 +61,8 @@ source can be referenced as an example,
 ### Magento Version Requirements
 | Release      | Magento Version |
 | ------------ | --------------- |
-| dev-master   | 2.2.x           | 
-| dev-master   | 2.1.x           |
+| 0.1.x        | 2.2.x           | 
+| 0.1.x        | 2.1.x           |
 | Nope         | 2.0.x           |
 
 ### Screenshots
