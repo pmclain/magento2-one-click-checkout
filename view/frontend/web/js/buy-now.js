@@ -2,7 +2,8 @@ define([
     'jquery',
     'mage/translate',
     'Magento_Ui/js/modal/alert',
-    'underscore'
+    'underscore',
+    'mage/cookies'
 ], function ($, $t, alert, _) {
     "use strict";
 
@@ -17,20 +18,34 @@ define([
             confirmationSelector: '#one-click-confirmation'
         },
 
+        cookie: 'occ_status',
+        cookieEnabled: 'enabled',
+        cookieDisabled: 'disabled',
+
         _create: function () {
-            this._initButton()
+            this._initButton();
         },
 
         _initButton: function () {
             var self = this;
-            $.ajax({
-                url: self.options.isAvailableUrl
-            }).done(function(result) {
-                if (!result) {
-                    return;
-                }
-                self._createButton();
-            });
+
+            switch ($.mage.cookies.get(this.cookie)) {
+                case this.cookieEnabled:
+                    this._createButton();
+                    break;
+                case this.cookieDisabled:
+                    break;
+                default:
+                    $.ajax({
+                        url: self.options.isAvailableUrl
+                    }).done(function(result) {
+                        if (!result) {
+                            $.mage.cookies.set(self.cookie, self.cookieDisabled);
+                        }
+                        $.mage.cookies.set(self.cookie, self.cookieEnabled, {lifetime: -1});
+                        self._createButton();
+                    });
+            }
         },
 
         _createButton: function () {
