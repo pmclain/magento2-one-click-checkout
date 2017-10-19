@@ -41,6 +41,7 @@ define([
                     }).done(function(result) {
                         if (!result) {
                             $.mage.cookies.set(self.cookie, self.cookieDisabled);
+                            return;
                         }
                         $.mage.cookies.set(self.cookie, self.cookieEnabled, {lifetime: -1});
                         self._createButton();
