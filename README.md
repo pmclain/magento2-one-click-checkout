@@ -1,3 +1,9 @@
+# THIS PROJECT IS ABANDONDED
+This was something fun I built over a weekend after hearing Amazon's patent had
+expired. The Magento core team has [created there own version](https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/InstantPurchase) to be included in a future release of
+v2.2 and beyond. If you want this feature on the your Magento store you **SHOULD** wait for
+the core release and **NOT** install this module.
+
 ## Magento 2 One Click Checkout
 
 Add one click checkout option for logged in customers.
